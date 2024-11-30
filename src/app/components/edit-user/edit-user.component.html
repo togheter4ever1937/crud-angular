@@ -1,0 +1,94 @@
+<!-- <section
+  class="min-h-screen bg-gradient-to-r from-purple-500 to-indigo-500 flex justify-center items-center py-12"
+>
+</section> -->
+<div class="bg-white w-full min-w-[430px] rounded-lg shadow-lg p-8 space-y-6">
+  <!-- Header -->
+  <header class="text-center">
+    <h1 class="text-3xl font-bold text-gray-800">Edit User Information</h1>
+    <p class="text-gray-500">Discover and Edit user informations below .</p>
+  </header>
+
+  <!-- Form -->
+  <form class="space-y-6">
+    <!-- ID (Read-Only) -->
+    <div>
+      <label for="id" class="block text-gray-700 font-medium mb-2"
+        >User ID</label
+      >
+      <input
+        type="text"
+        id="id"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-black focus:outline-none cursor-not-allowed"
+        value="{{ userInfo.id }}"
+        readonly
+      />
+    </div>
+    <!-- Name Field -->
+    <div>
+      <label for="name" class="block text-gray-700 font-medium mb-2"
+        >Name</label
+      >
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:outline-none placeholder:text-black"
+        placeholder="{{ userInfo.name }}"
+        [(ngModel)]="userInfo.name"
+      />
+    </div>
+
+    <!-- Email Field -->
+    <div>
+      <label for="email" class="block text-gray-700 font-medium mb-2"
+        >Email</label
+      >
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:outline-none placeholder:text-black"
+        placeholder="{{ userInfo.email }}"
+        [(ngModel)]="userInfo.email"
+      />
+    </div>
+
+    <!-- Phone Number Field -->
+    <div>
+      <label for="phone" class="block text-gray-700 font-medium mb-2"
+        >Phone Number</label
+      >
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:outline-none placeholder:text-black"
+        placeholder="{{ userInfo.phone }}"
+        [(ngModel)]="userInfo.phone"
+      />
+    </div>
+
+    <!-- <p>{{userInfo.name}}</p> -->
+
+    <!-- Buttons -->
+    <div class="flex justify-end space-x-4">
+      <button
+        type="button"
+        class="px-6 py-2 rounded-lg bg-gray-500 hover:bg-gray-600 text-white font-semibold shadow-md transition"
+      >
+        <a [routerLink]="['/home']" routerLinkActive="router-link-active">
+          Cancel
+        </a>
+      </button>
+
+      <button
+        (click)="updateUserInfo(userInfo.id)"
+        type="submit"
+        class="px-6 py-2 rounded-lg bg-purple-500 hover:bg-purple-600 text-white font-semibold shadow-md transition"
+      >
+        Save Changes
+      </button>
+    </div>
+  </form>
+</div>

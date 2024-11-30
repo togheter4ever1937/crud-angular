@@ -1,0 +1,80 @@
+<div class="w-full max-w-xl bg-gray-800 rounded-lg shadow-lg p-8 space-y-6">
+  <!-- Titre -->
+  <h2 class="text-3xl font-bold text-purple-400 text-center uppercase">
+    Ajouter un utilisateur
+  </h2>
+
+  <!-- Formulaire -->
+  <form class="space-y-4">
+    <!-- Champ : Nom -->
+    <div class="flex flex-col space-y-1">
+      <label for="name" class="text-sm font-semibold text-gray-300">Nom</label>
+      <input
+        [(ngModel)]="name"
+        name="name"
+        type="text"
+        id="name"
+        placeholder="Entrez le nom"
+        class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2"
+      />
+    </div>
+
+    <!-- Champ : Email -->
+    <div class="flex flex-col space-y-1">
+      <label for="email" class="text-sm font-semibold text-gray-300"
+        >Email</label
+      >
+      <input
+        [(ngModel)]="phone"
+        name="phone"
+        type="email"
+        id="email"
+        placeholder="Entrez l'email"
+        class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+      />
+    </div>
+
+    <!-- Champ : Téléphone -->
+    <div class="flex flex-col space-y-1">
+      <label for="tel" class="text-sm font-semibold text-gray-300"
+        >Téléphone</label
+      >
+      <input
+        [(ngModel)]="email"
+        name="email"
+        type="tel"
+        id="tel"
+        placeholder="Entrez le numéro de téléphone"
+        class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+      />
+    </div>
+
+    <!-- Boutons -->
+    <div class="flex justify-between items-center mt-6">
+      <!-- Bouton Ajouter -->
+      <button
+        (click)="addUser()"
+        type="submit"
+        class="px-6 py-2 rounded-lg bg-purple-500 hover:bg-purple-600 text-white font-semibold shadow-md transition"
+      >
+        Ajouter
+      </button>
+
+      <!-- Bouton Annuler -->
+      <button
+        type="button"
+        class="px-6 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white font-semibold shadow-md transition"
+      >
+        <a [routerLink]="['/home']" routerLinkActive="router-link-active">
+          Annuler
+        </a>
+      </button>
+    </div>
+  </form>
+  <!-- <p
+    [ngClass]="{ 'hidden': isEmpty }"
+    class="text-red-600 text-center capitalize text-[20px] m-0 p-0"
+  >
+    please fill in all the filds !
+  </p> -->
+</div>
